@@ -53,6 +53,20 @@ document.querySelector('.hover-right-top').addEventListener('click', function() 
   }
 });
 
+document.querySelector('.hover-left-bottom').addEventListener('click', function() {
+  if (currentPage > 1) {
+    currentPage -= 2;
+    renderPages();
+  }
+});
+
+document.querySelector('.hover-right-bottom').addEventListener('click', function() {
+  if (currentPage < pdfDoc.numPages) {
+    currentPage += 2;
+    renderPages();
+  }
+});
+
 function renderPages() {
   renderPage(currentPage, canvasLeft, ctxLeft, document.querySelector('.page-left'));
   if (currentPage + 1 <= pdfDoc.numPages) {
