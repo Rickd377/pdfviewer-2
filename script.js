@@ -25,46 +25,37 @@ document.getElementById('file').addEventListener('change', function(event) {
   }
 });
 
-document.getElementById('prev').addEventListener('click', function() {
-  if (currentPage > 1) {
+function navigatePages(direction) {
+  if (direction === 'prev' && currentPage > 1) {
     currentPage -= 2;
-    renderPages();
+  } else if (direction === 'next' && currentPage < pdfDoc.numPages) {
+    currentPage += 2;
   }
+  renderPages();
+}
+
+document.getElementById('prev').addEventListener('click', function() {
+  navigatePages('prev');
 });
 
 document.getElementById('next').addEventListener('click', function() {
-  if (currentPage < pdfDoc.numPages) {
-    currentPage += 2;
-    renderPages();
-  }
+  navigatePages('next');
 });
 
 document.querySelector('.hover-left-top').addEventListener('click', function() {
-  if (currentPage > 1) {
-    currentPage -= 2;
-    renderPages();
-  }
+  navigatePages('prev');
 });
 
 document.querySelector('.hover-right-top').addEventListener('click', function() {
-  if (currentPage < pdfDoc.numPages) {
-    currentPage += 2;
-    renderPages();
-  }
+  navigatePages('next');
 });
 
 document.querySelector('.hover-left-bottom').addEventListener('click', function() {
-  if (currentPage > 1) {
-    currentPage -= 2;
-    renderPages();
-  }
+  navigatePages('prev');
 });
 
 document.querySelector('.hover-right-bottom').addEventListener('click', function() {
-  if (currentPage < pdfDoc.numPages) {
-    currentPage += 2;
-    renderPages();
-  }
+  navigatePages('next');
 });
 
 function renderPages() {
