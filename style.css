@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --bg-color: #a7c7ff;
+  --side-bar-color: #4477cc;
+  --border-color: #325694;
+  --text-color: #294474;
+  --button-color: #b1ceff;
+  --hover-color: #90b9ff;
+  --light-gray: #ccc;
+  --white: #fff;
+  --black: #000;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--text-color);
+  height: 100dvh;
+  display: flex;
+}
+
+.side-bar {
+  height: 100%;
+  width: 250px;
+  background-color: var(--side-bar-color);
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid var(--border-color);
+}
+
+.main {
+  flex: 1;
+  padding: 3rem;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.input-wrapper input {
+  display: none;
+}
+
+.input-wrapper .file-label {
+  display: inline-block;
+  padding: .8em 1.5em;
+  border: 2px solid var(--border-color);
+  border-radius: .3rem;
+  cursor: pointer;
+  transition: background-color .4s ease;
+  background-color: var(--button-color);
+  text-align: center;
+}
+
+.input-wrapper .file-label:hover {
+  background-color: var(--hover-color);
+}
+
+.file-name {
+  margin-top: 1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.buttons button {
+  border: 2px solid var(--border-color);
+  padding: .8em 1.5em;
+  border-radius: .3rem;
+  cursor: pointer;
+  transition: background-color .4s ease;
+  background-color: var(--button-color);
+}
+
+.buttons button:hover {
+  background-color: var(--hover-color);
+}
+
+.book {
+  width: calc(1188px + 10px);
+  height: 840px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.lines {
+  width: 10px;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: repeating-linear-gradient(90deg, var(--light-gray), var(--light-gray) 1px, var(--white) 1px, var(--white) 2px, var(--light-gray) 2px);
+}
+
+.page-left,
+.page-right {
+  flex: 1;
+  height: 100%;
+  border-radius: 2px;
+  background-color: var(--white);
+  position: relative;
+}
+
+[class^="hover-"] {
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.hover-left-top {
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom right, var(--bg-color) 50%, var(--white) 50%);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
+}
+
+.hover-right-top {
+  top: 0;
+  right: 0;
+  background: linear-gradient(to bottom left, var(--bg-color) 50%, var(--white) 50%);
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, .1);
+}
+
+.hover-left-bottom {
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top right, var(--bg-color) 50%, var(--white) 50%);
+  box-shadow: 5px -5px 5px rgba(0, 0, 0, .1);
+}
+
+.hover-right-bottom {
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(to top left, var(--bg-color) 50%, var(--white) 50%);
+  box-shadow: -5px -5px 5px rgba(0, 0, 0, .1);
+}
+
+[class^="hover-"]:hover {
+  opacity: 1;
+}
