@@ -36,6 +36,12 @@ body {
   border-right: 2px solid var(--border-color);
 }
 
+h2 {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--black);
+}
+
 .main {
   flex: 1;
   padding: 3rem;
@@ -49,7 +55,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 3rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
